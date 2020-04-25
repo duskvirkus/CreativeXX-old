@@ -1,6 +1,6 @@
 language: c++
 
-dist: trusty
+dist: bionic
 sudo: required
 
 matrix:
@@ -13,11 +13,9 @@ matrix:
           update: true
           sources:
             - george-edison55-precise-backports
-            - ubuntu-toolchain-r-test
           packages:
             - cmake-data
             - cmake
-            - gcc-7
 
 before_install:
   - eval "${MATRIX_EVAL}"
