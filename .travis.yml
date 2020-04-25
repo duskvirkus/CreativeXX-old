@@ -15,4 +15,4 @@ matrix:
             - cmake-data
             - cmake
 
-script: script/ci/test.sh
+script: ./script/ci/test.sh
