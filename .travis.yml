@@ -15,4 +15,7 @@ matrix:
             - cmake-data
             - cmake
 
-script: ./script/ci/test.sh
+before_install:
+  - eval "${MATRIX_EVAL}"
+
+script: scripts/ci/test.sh
