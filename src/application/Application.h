@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+#include "../window/Window.h"
+#include "../window/LinuxWindow.h"
+
 namespace creative {
 
     class Application {
@@ -20,6 +23,8 @@ namespace creative {
 
         virtual ~Application() = default;
 
+        void run();
+
         virtual void setup();
 
         virtual void update();
@@ -33,6 +38,8 @@ namespace creative {
     protected:
 
         bool m_looping;
+
+        window::Window* m_window;
 
     };
 

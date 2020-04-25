@@ -10,7 +10,7 @@ void Sandbox::update() {
 
 void Sandbox::draw() {
     LOG_INFO("In Draw")
-    loop(false);
+//    loop(false);
 }
 
 creative::Application *create_application() {

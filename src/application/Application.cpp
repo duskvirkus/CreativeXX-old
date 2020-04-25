@@ -3,7 +3,15 @@
 namespace creative {
 
     Application::Application() :
-            m_looping(true) {}
+            m_looping(true), m_window(window::Window::create()) {}
+
+    void Application::run() {
+        setup();
+        while (looping()) {
+            update();
+            draw();
+        }
+    }
 
     void Application::setup() {
         std::cout << "Setup" << '\n';

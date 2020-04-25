@@ -11,11 +11,7 @@ int main(int argc, char **argv) {
     creative::initialize();
 
     auto app = create_application();
-    app->setup();
-    while (app->looping()) {
-        app->update();
-        app->draw();
-    }
+    app->run();
     delete app;
     return 0;
 }
