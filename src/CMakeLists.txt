@@ -7,8 +7,8 @@ add_library(
         core/entry.h
         core/init.cpp
         core/init.h
-        log/log.cpp
-        log/log.h
+        log/Log.cpp
+        log/Log.h
         log/Logger.cpp
         log/Logger.h
         )

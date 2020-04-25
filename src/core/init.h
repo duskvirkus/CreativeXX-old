@@ -1,7 +1,7 @@
 #ifndef CREATIVEXX_INIT_H
 #define CREATIVEXX_INIT_H
 
-#include "../log/log.h"
+#include "../log/Log.h"
 
 namespace creative {
 

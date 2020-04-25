@@ -3,6 +3,8 @@
 
 #include "init.h"
 
+#ifndef CATCH_CONFIG_MAIN
+
 extern creative::Application *create_application();
 
 int main(int argc, char **argv) {
@@ -17,5 +19,7 @@ int main(int argc, char **argv) {
     delete app;
     return 0;
 }
+
+#endif // CATCH_CONFIG_MAIN
 
 #endif //CREATIVEXX_ENTRY_H
