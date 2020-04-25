@@ -1,7 +1,12 @@
 #!/bin/bash
+set -e
 
-mkdir cmake-build-debug
-cd cmake-build-debug
+CMAKE_DIR=cmake-build-debug
+
+if [ ! -d "$CMAKE_DIR" ]; then
+  mkdir "$CMAKE_DIR"
+fi
+cd "$CMAKE_DIR"
 
 cmake ..
 make
@@ -10,7 +15,7 @@ cd ../bin/test
 
 for file in ./*
 do
-  exec ${file} &
+  ${file}
 done
 
 cd ..
