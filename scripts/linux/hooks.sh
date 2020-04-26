@@ -1,3 +1,4 @@
 #!/bin/bash
 
-ln -s scripts/hooks/pre-commit .git/hooks/pre-commit
+cd .git/hooks
+ln -s ../../scripts/hooks/pre-commit
