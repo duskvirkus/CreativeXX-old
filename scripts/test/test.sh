@@ -1,16 +1,19 @@
 #!/bin/bash
 set -e
 
-while [[ $# -gt 0 ]]
-do
-key="$1"
-shift
-case $key in
-    --ci)
-    CI=1
-    ;;
-esac
-done
+if [[ $# -ne 0 ]]
+then
+  while [[ $# -gt 0 ]]
+  do
+  key="$1"
+  shift
+  case $key in
+      --ci)
+      CI=1
+      ;;
+  esac
+  done
+fi
 
 if [ $CI ]
 then
