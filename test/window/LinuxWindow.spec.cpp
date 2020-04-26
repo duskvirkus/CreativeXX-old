@@ -3,5 +3,8 @@
 #include <CreativeXX.h>
 
 TEST_CASE("Basic Linux Window", "[window][LinuxWindow]") {
-    creative::window::Window::create();
+    auto a = creative::window::Window::create();
+
+    REQUIRE(a->width() == 800);
+    REQUIRE(a->height() == 600);
 }
