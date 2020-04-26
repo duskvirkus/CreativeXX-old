@@ -8,10 +8,16 @@ matrix:
       compiler:
         - gcc
         - clang
+      addons:
+        apt:
+          packages:
+            - libxrandr-dev
+            - libxinerama-dev
+            - libxcursor-dev
+            - libxi-dev
 
 before_install:
   - eval "${MATRIX_EVAL}"
 
 script:
-  - scripts/linux/ubuntu-install.sh
   - scripts/ci/test.sh
