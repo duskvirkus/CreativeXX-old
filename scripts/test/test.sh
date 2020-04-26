@@ -27,7 +27,7 @@ fi
 cd "$CMAKE_DIR"
 
 cmake ..
-make
+make -j4
 
 cd ../bin/test
 
