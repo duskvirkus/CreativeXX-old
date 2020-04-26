@@ -38,7 +38,7 @@ TEST_CASE("Creative macros", "[log][Log]") {
     SECTION("Error") {
         string s("Creative Error");
         CREATIVE_ERROR(s)
-        REQUIRE(out.str().find(s) != string::npos);
+        REQUIRE(out.str().find(s) == string::npos);
         REQUIRE(out.str().find("ERROR") == string::npos);
     }
 
