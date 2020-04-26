@@ -1,7 +1,6 @@
 language: c++
 
 dist: bionic
-sudo: required
 
 matrix:
   include:
@@ -14,4 +13,5 @@ before_install:
   - eval "${MATRIX_EVAL}"
 
 script:
+  - scripts/linux/ubuntu-install.sh
   - scripts/ci/test.sh
