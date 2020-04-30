@@ -10,7 +10,7 @@ namespace creative::event {
 
         explicit MouseButtonReleasedEvent(int button);
 
-        MouseButtonReleasedEvent(const MouseButtonReleasedEvent&) = delete;
+        MouseButtonReleasedEvent(const MouseButtonReleasedEvent&) = default;
 
         MouseButtonReleasedEvent(const MouseButtonReleasedEvent&&) = delete;
 

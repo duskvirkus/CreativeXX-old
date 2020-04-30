@@ -8,7 +8,7 @@ namespace creative::event {
     class MouseButtonEvent : public Event {
     public:
 
-        MouseButtonEvent(const MouseButtonEvent&) = delete;
+        MouseButtonEvent(const MouseButtonEvent&) = default;
         MouseButtonEvent(const MouseButtonEvent &&) = delete;
 
         [[nodiscard]] int button() const;

@@ -1,4 +1,4 @@
-#include "WindowResizedEvent.spec.h"
+#include "WindowResizedEvent.h"
 
 namespace creative::event {
 

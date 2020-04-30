@@ -16,7 +16,7 @@ namespace creative::window {
     }
 
     LinuxWindow::LinuxWindow(std::string title, unsigned int width, unsigned int height) :
-            m_data({title, width, height}) {
+            m_data({std::move(title), width, height}) {
 
         CREATIVE_INFO(
                 "Creating window " + m_data.title + " w: " + std::to_string(m_data.width) + " h: " +
@@ -40,11 +40,88 @@ namespace creative::window {
         glfwMakeContextCurrent(m_window);
         glfwSetWindowUserPointer(m_window, &m_data);
 
+        glfwSetWindowSizeCallback(m_window, [](GLFWwindow* window, int width, int height) {
+            WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+            data.width = width;
+            data.height = height;
+            event::WindowResizedEvent event(width, height);
+            data.event_callback(event);
+        });
+
         glfwSetWindowCloseCallback(m_window, [](GLFWwindow *window) {
             WindowData &data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
             event::WindowClosedEvent event;
             data.event_callback(event);
         });
+
+        glfwSetKeyCallback(m_window, [](GLFWwindow *window, int key, int scan_code, int action, int mods) {
+            WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+
+            switch (action) {
+                case GLFW_PRESS:
+                {
+                    event::KeyPressedEvent event(key, false);
+                    data.event_callback(event);
+                    break;
+                }
+                case GLFW_RELEASE:
+                {
+                    event::KeyReleasedEvent event(key);
+                    data.event_callback(event);
+                    break;
+                }
+                case GLFW_REPEAT:
+                {
+                    event::KeyPressedEvent event(key, true);
+                    data.event_callback(event);
+                    break;
+                }
+                default:
+                {
+                    CREATIVE_WARN("Unexpected path when creating key event!")
+                    break;
+                }
+            }
+        });
+
+        glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods){
+            WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+
+            switch (action) {
+                case GLFW_PRESS:
+                {
+                    event::MouseButtonPressedEvent event(button);
+                    data.event_callback(event);
+                    break;
+                }
+                case GLFW_RELEASE:
+                {
+                    event::MouseButtonReleasedEvent event(button);
+                    data.event_callback(event);
+                    break;
+                }
+                default:
+                {
+                    CREATIVE_WARN("Unexpected path when creating mouse button event!")
+                    break;
+                }
+            }
+        });
+
+        glfwSetScrollCallback(m_window, [](GLFWwindow* window, double x_off, double y_off){
+            WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+
+            event::MouseScrolledEvent event(static_cast<float>(x_off), static_cast<float>(y_off));
+            data.event_callback(event);
+        });
+
+        glfwSetCursorPosCallback(m_window, [](GLFWwindow* window, double x, double y){
+            WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+
+            event::MouseMovedEvent event(static_cast<float>(x), static_cast<float>(y));
+            data.event_callback(event);
+        });
+
     }
 
     LinuxWindow::~LinuxWindow() {

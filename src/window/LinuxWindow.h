@@ -6,7 +6,14 @@
 
 #include "../log/Log.h"
 #include "Window.h"
+#include "../event/KeyPressedEvent.h"
+#include "../event/KeyReleasedEvent.h"
+#include "../event/MouseButtonPressedEvent.h"
+#include "../event/MouseButtonReleasedEvent.h"
+#include "../event/MouseScrolledEvent.h"
+#include "../event/MouseMovedEvent.h"
 #include "../event/WindowClosedEvent.h"
+#include "../event/WindowResizedEvent.h"
 
 namespace creative::window {
 

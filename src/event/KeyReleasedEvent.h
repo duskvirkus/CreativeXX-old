@@ -10,7 +10,7 @@ namespace creative::event {
 
         explicit KeyReleasedEvent(unsigned int key_code);
 
-        KeyReleasedEvent(const KeyReleasedEvent&) = delete;
+        KeyReleasedEvent(const KeyReleasedEvent&) = default;
 
         KeyReleasedEvent(const KeyReleasedEvent&&) = delete;
 

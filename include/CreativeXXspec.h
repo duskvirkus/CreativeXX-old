@@ -14,6 +14,6 @@
 #include "../src/event/MouseMovedEvent.h"
 #include "../src/event/MouseScrolledEvent.h"
 #include "../src/event/WindowClosedEvent.h"
-#include "../src/event/WindowResizedEvent.spec.h"
+#include "../src/event/WindowResizedEvent.h"
 
 #endif //CREATIVEXX_CREATIVEXXSPEC_H

@@ -10,7 +10,7 @@ namespace creative::event {
 
         KeyPressedEvent(unsigned int key_code, bool repeat);
 
-        KeyPressedEvent(const KeyPressedEvent &) = delete;
+        KeyPressedEvent(const KeyPressedEvent &) = default;
 
         KeyPressedEvent(const KeyPressedEvent &&) = delete;
 

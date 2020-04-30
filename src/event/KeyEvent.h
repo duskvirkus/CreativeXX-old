@@ -8,7 +8,7 @@ namespace creative::event {
     class KeyEvent : public Event {
     public:
 
-        KeyEvent(const KeyEvent&) = delete;
+        KeyEvent(const KeyEvent&) = default;
 
         KeyEvent(const KeyEvent&&) = delete;
 
