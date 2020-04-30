@@ -15,6 +15,8 @@ public:
     void mouse_up(int button) override;
     void key_down(unsigned int key_code, bool repeat) override;
     void key_up(unsigned int key_code) override;
+    void mouse_moved() override;
+    void mouse_scrolled(float x_off, float y_off) override;
 };
 
 #endif //CREATIVEXX_SANDBOX_H

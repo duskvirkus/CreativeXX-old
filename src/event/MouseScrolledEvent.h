@@ -10,7 +10,7 @@ namespace creative::event {
 
         MouseScrolledEvent(float x_offset, float y_offset);
 
-        MouseScrolledEvent(const MouseScrolledEvent &) = delete;
+        MouseScrolledEvent(const MouseScrolledEvent &) = default;
 
         MouseScrolledEvent(const MouseScrolledEvent &&) = delete;
 

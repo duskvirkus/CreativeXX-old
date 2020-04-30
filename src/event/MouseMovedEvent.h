@@ -10,7 +10,7 @@ namespace creative::event {
 
         MouseMovedEvent(float x, float y);
 
-        MouseMovedEvent(const MouseMovedEvent &) = delete;
+        MouseMovedEvent(const MouseMovedEvent &) = default;
 
         MouseMovedEvent(const MouseMovedEvent &&) = delete;
 
