@@ -2,11 +2,14 @@
 #define CREATIVEXX_APPLICATION_H
 
 #include <iostream>
+#include <memory>
+#include <functional>
 
 #include "../window/Window.h"
 #include "../window/LinuxWindow.h"
+#include "../event/Event.h"
 
-namespace creative {
+namespace creative::application {
 
     class Application {
     public:
@@ -31,15 +34,15 @@ namespace creative {
 
         virtual void draw();
 
-        void loop(bool looping);
+        void on_event(const event::Event& event);
 
-        bool looping() const;
+        void event_close();
 
     protected:
 
-        bool m_looping;
+        bool m_running;
 
-        window::Window* m_window;
+        std::unique_ptr<window::Window> m_window;
 
     };
 

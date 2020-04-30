@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include <catch.hpp>
-#include <CreativeXX.h>
+#include <CreativeXXspec.h>
 
 #include <string>
 

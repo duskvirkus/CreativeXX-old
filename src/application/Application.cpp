@@ -1,13 +1,16 @@
 #include "Application.h"
 
-namespace creative {
+namespace creative::application {
 
     Application::Application() :
-            m_looping(true), m_window(window::Window::create()) {}
+            m_running(true), m_window(std::unique_ptr<window::Window>(window::Window::create())) {
+        m_window->set_event_callback(std::bind(&Application::on_event, this, std::placeholders::_1));
+    }
 
     void Application::run() {
         setup();
-        while (looping()) {
+        while (m_running) {
+            m_window->update();
             update();
             draw();
         }
@@ -25,12 +28,16 @@ namespace creative {
         std::cout << "Draw" << '\n';
     }
 
-    void Application::loop(bool looping) {
-        m_looping = looping;
+    void Application::on_event(const event::Event &event) {
+        switch (event.type()) {
+            case event::EventType::WINDOW_CLOSED:
+                event_close();
+                break;
+        }
     }
 
-    bool Application::looping() const {
-        return m_looping;
+    void Application::event_close() {
+        m_running = false;
     }
 
 }

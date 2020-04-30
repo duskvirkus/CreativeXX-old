@@ -6,3 +6,4 @@ target_include_directories(working.spec PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../
 
 add_subdirectory(log)
 add_subdirectory(window)
+add_subdirectory(event)

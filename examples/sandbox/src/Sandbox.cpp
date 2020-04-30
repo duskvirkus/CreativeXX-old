@@ -1,18 +1,18 @@
 #include "Sandbox.h"
 
 void Sandbox::setup() {
-    LOG_INFO("In Setup")
+//    LOG_INFO("In Setup")
 }
 
 void Sandbox::update() {
-    LOG_INFO("In Update")
+//    LOG_INFO("In Update")
 }
 
 void Sandbox::draw() {
-    LOG_INFO("In Draw")
+//    LOG_INFO("In Draw")
 //    loop(false);
 }
 
-creative::Application *create_application() {
+creative::application::Application *create_application() {
     return new Sandbox();
 }

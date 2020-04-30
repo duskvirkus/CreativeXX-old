@@ -3,7 +3,7 @@
 
 #include <CreativeXX.h>
 
-class Sandbox : public creative::Application {
+class Sandbox : public creative::application::Application {
 public:
     void setup() override;
     void update() override;

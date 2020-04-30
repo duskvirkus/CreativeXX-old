@@ -5,7 +5,7 @@
 
 #ifndef CATCH_CONFIG_MAIN
 
-extern creative::Application *create_application();
+extern creative::application::Application *create_application();
 
 int main(int argc, char **argv) {
     creative::initialize();
