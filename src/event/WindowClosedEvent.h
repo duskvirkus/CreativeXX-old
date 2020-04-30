@@ -14,11 +14,11 @@ namespace creative::event {
         WindowClosedEvent(const WindowClosedEvent &&) = delete;
 
         WindowClosedEvent operator=(const WindowClosedEvent &) = delete;
-        WindowClosedEvent operator==(const WindowClosedEvent &&) = delete;
+        WindowClosedEvent operator=(const WindowClosedEvent &&) = delete;
 
         ~WindowClosedEvent() override = default;
 
-        EventType type() const override;
+        [[nodiscard]] EventType type() const override;
 
     };
 

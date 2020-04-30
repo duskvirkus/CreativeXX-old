@@ -27,7 +27,15 @@ add_library(
         event/MouseButtonEvent.h
         event/WindowClosedEvent.cpp
         event/WindowClosedEvent.h
-        )
+        event/WindowResizedEvent.spec.cpp
+        event/WindowResizedEvent.spec.h
+        event/MouseButtonPressedEvent.cpp
+        event/MouseButtonPressedEvent.h
+        event/MouseButtonReleasedEvent.cpp
+        event/MouseButtonReleasedEvent.h
+        event/MouseMovedEvent.cpp
+        event/MouseMovedEvent.h
+        event/MouseScrolledEvent.cpp event/MouseScrolledEvent.h)
 
 target_include_directories(CreativeXX INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/../include")
 
