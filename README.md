@@ -10,21 +10,44 @@ Not useable at the moment, I suggest you checkout [openFrameworks](https://openf
 
 Contributions are welcome although there's little documentation (which will hopefully be fixed soon). Currently Linux is the only supported platform.
 
-### Setup (Linux)
+### Setup
 
-- Fork the repository
+#### Fork the repository
 
-- Clone with submodules on `git clone --recurse-submodules https://github.com/<your-github-username>/CreativeXX.git`
+```bash
+gh repo fork violetcraze/CreativeXX
+```
 
-- Setup Git Hooks and Install Dependencies
+#### Clone with submodules
+
+```bash
+gh repo clone <username>/CreativeXX -- --recurse-submodules
+```
+
+#### Setup Git Hooks
 
 ```bash
 cd CreativeXX
 ./scripts/linux/hooks.sh
+```
+
+#### Install dependencies based on distribution
+
+*If you're chosen distribution isn't listed, please [file an issue](https://github.com/violetcraze/CreativeXX/issues/new) or work on adding it.*
+
+##### Ubuntu or Ubuntu Based
+
+```bash
 ./scripts/linux/ubuntu-install.sh
 ```
 
-- Install [CMake](https://cmake.org/download/) (if you don't already have v 3.12 or higher)
+##### Arch or Arch Based
+
+```bash
+./scripts/linux/arch-install.sh
+```
+
+#### Install [CMake](https://cmake.org/download/) (if you don't already have v 3.12 or higher)
 
 ```bash
 curl <link to latest linux script install found at https://cmake.org/download/> -o cmake.sh
@@ -38,7 +61,7 @@ You should be all set but if you have problems [file an issue](https://github.co
 You could use an editor that supports CMake like CLion or vscode but if not here's how to do it from the terminal.
 
 ```bash
-<in root directory of project>
+# in root directory of project
 mkdir cmake-build-debug
 cd cmake-build-debug
 cmake ..
