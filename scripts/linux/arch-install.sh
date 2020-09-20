@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+sudo pacman -S --noconfirm cmake
 sudo pacman -S --noconfirm xorg-server
 sudo pacman -S --noconfirm libxrandr
 sudo pacman -S --noconfirm libxinerama

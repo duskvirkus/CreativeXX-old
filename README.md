@@ -39,19 +39,16 @@ cd CreativeXX
 
 ```bash
 ./scripts/linux/ubuntu-install.sh
+
+# Install CMake if you don't already have 3.12 or higher
+curl <link to latest linux script install found at https://cmake.org/download/> -o cmake.sh
+sudo sh cmake.sh --prefix=/usr/local/ --exclude-subdir
 ```
 
 ##### Arch or Arch Based
 
 ```bash
 ./scripts/linux/arch-install.sh
-```
-
-#### Install [CMake](https://cmake.org/download/) (if you don't already have v 3.12 or higher)
-
-```bash
-curl <link to latest linux script install found at https://cmake.org/download/> -o cmake.sh
-sudo sh cmake.sh --prefix=/usr/local/ --exclude-subdir
 ```
 
 You should be all set but if you have problems [file an issue](https://github.com/violetcraze/CreativeXX/issues/new).
