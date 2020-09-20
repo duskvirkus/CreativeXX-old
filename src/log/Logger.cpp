@@ -64,6 +64,7 @@ namespace creative::log {
             case Logger::FATAL:
                 return c_str_fatal;
         }
+        return c_str_unknown;
     }
 
 }

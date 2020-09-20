@@ -20,7 +20,7 @@ void Sandbox::close() {
     LOG_INFO("Window Closed")
 }
 
-void Sandbox::key_down(unsigned int key_code, bool repeat) {
+void Sandbox::key_down(unsigned int key_code, bool /*repeat*/) {
     LOG_INFO("Key down, code: " + std::to_string(key_code));
 }
 

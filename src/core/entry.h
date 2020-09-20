@@ -7,7 +7,7 @@
 
 extern creative::application::Application *create_application();
 
-int main(int argc, char **argv) {
+int main(int /*argc*/, char **/*argv*/) {
     creative::initialize();
 
     auto app = create_application();

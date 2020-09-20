@@ -50,9 +50,9 @@ namespace creative::window {
 
     private:
 
-        GLFWwindow *m_window;
-
         WindowData m_data;
+
+        GLFWwindow *m_window;
 
     };
 

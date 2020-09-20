@@ -16,7 +16,7 @@ namespace creative::window {
     }
 
     LinuxWindow::LinuxWindow(std::string title, unsigned int width, unsigned int height) :
-            m_data({std::move(title), width, height}) {
+            Window(), m_data({std::move(title), width, height, nullptr}), m_window(nullptr) {
 
         CREATIVE_INFO(
                 "Creating window " + m_data.title + " w: " + std::to_string(m_data.width) + " h: " +
@@ -54,7 +54,7 @@ namespace creative::window {
             data.event_callback(event);
         });
 
-        glfwSetKeyCallback(m_window, [](GLFWwindow *window, int key, int scan_code, int action, int mods) {
+        glfwSetKeyCallback(m_window, [](GLFWwindow *window, int key, int /*scan_code*/, int action, int /*mods*/) {
             WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 
             switch (action) {
@@ -84,7 +84,7 @@ namespace creative::window {
             }
         });
 
-        glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods){
+        glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int /*mods*/){
             WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
 
             switch (action) {

@@ -27,15 +27,15 @@ namespace creative::application {
 
     void Application::close() {}
 
-    void Application::key_down(unsigned int key_code, bool repeat) {}
+    void Application::key_down(unsigned int, bool) {}
 
-    void Application::key_up(unsigned int key_code) {}
+    void Application::key_up(unsigned int) {}
 
-    void Application::mouse_down(int button) {}
+    void Application::mouse_down(int) {}
 
-    void Application::mouse_up(int button) {}
+    void Application::mouse_up(int) {}
 
-    void Application::mouse_scrolled(float x_off, float y_off) {}
+    void Application::mouse_scrolled(float, float) {}
 
     void Application::mouse_moved() {}
 

@@ -64,6 +64,7 @@ namespace creative::log {
         static constexpr const char *c_str_warn = "WARN ";
         static constexpr const char *c_str_error = "ERROR";
         static constexpr const char *c_str_fatal = "FATAL";
+        static constexpr const char *c_str_unknown = "UNKNOWN";
 
     };
 
